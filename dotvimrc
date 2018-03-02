@@ -23,6 +23,9 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'vim-scripts/indentpython.vim'
 
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -67,15 +70,15 @@ au BufNewFile,BufRead *.js, *.html, *.css
 
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
-" 使用 NERDTree 插件查看工程文件。设置快捷键，速记：file list
+" NERDTree setting
 nmap <Leader>fl :NERDTreeToggle<CR>
-" 设置 NERDTree 子窗口宽度
-let NERDTreeWinSize=22
-" 设置 NERDTree 子窗口位置
-let NERDTreeWinPos="right"
-" 显示隐藏文件
+" NERDTree subwindow size
+let NERDTreeWinSize=30
+" NERDTree position
+let NERDTreeWinPos="left"
+" show hidden files
 let NERDTreeShowHidden=1
-" NERDTree 子窗口中不显示冗余帮助信息
+" does not show help message
 let NERDTreeMinimalUI=1
-" 删除文件时自动删除文件对应 buffer
+" delete buffer when delete file
 let NERDTreeAutoDeleteBuffer=1
