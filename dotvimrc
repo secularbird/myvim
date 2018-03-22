@@ -22,7 +22,7 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'vim-scripts/indentpython.vim'
-
+Plugin 'bitc/vim-bad-whitespace'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 
@@ -67,6 +67,8 @@ au BufNewFile,BufRead *.js, *.html, *.css
 	\ set tabstop=2 |
 	\ set softtabstop=2 |
 	\ set shiftwidth=2
+
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 " NERDTree setting
 nmap <Leader>fl :NERDTreeToggle<CR>
