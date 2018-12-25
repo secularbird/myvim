@@ -25,6 +25,7 @@ Plugin 'vim-scripts/indentpython.vim'
 Plugin 'bitc/vim-bad-whitespace'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'vhdirk/vim-cmake'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -70,10 +71,20 @@ au BufNewFile,BufRead *.js, *.html, *.css
 
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
+" c/c++ setting
+au BufNewFile,BufRead *.cpp, *.c, *.h, *.cc
+	\ set tabstop=4 |
+	\ set softtabstop=4 |
+	\ set shiftwidth=4 |
+	\ set textwidth=120 |
+	\ set expandtab |
+	\ set autoindent |
+	\ set fileformat=unix
+
 " NERDTree setting
 nmap <Leader>fl :NERDTreeToggle<CR>
 " NERDTree subwindow size
-let NERDTreeWinSize=30
+let NERDTreeWinSize=32
 " NERDTree position
 let NERDTreeWinPos="left"
 " show hidden files
@@ -82,3 +93,5 @@ let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
 " delete buffer when delete file
 let NERDTreeAutoDeleteBuffer=1
+" ignore backup files
+let NERDTreeIgnore = ['\.pyc$', '\.swp$', '\.o$']
